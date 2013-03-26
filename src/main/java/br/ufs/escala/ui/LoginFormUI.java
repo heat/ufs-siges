@@ -1,5 +1,6 @@
 package br.ufs.escala.ui;
 
+import br.ufs.escala.businesslogic.fachada.ServiceFacade;
 import br.ufs.escala.transfer.Usuario;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -12,7 +13,15 @@ public class LoginFormUI {
     private String senha;
 
     public String login() {
+        try {
+        Usuario usuario = new Usuario(this.usuario, this.senha);
+        Usuario usuarioLog =
+        ServiceFacade.getInstance().authUser(usuario);
+        sessionRegister(usuarioLog);
         return "success";
+        } catch (Exception e) {
+            return "error";
+        }
     }
 
     private void sessionRegister(Usuario user) {
