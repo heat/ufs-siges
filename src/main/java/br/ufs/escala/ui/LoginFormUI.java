@@ -1,5 +1,13 @@
 package br.ufs.escala.ui;
 
-class LoginFormUI {
-	
+import br.ufs.escala.transfer.Usuario;
+
+public class LoginFormUI {
+	public void login() {
+
+	}
+
+	private void sessionRegister(Usuario user) {
+
+	}
 }

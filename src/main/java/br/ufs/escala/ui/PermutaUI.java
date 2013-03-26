@@ -1,5 +1,5 @@
 package br.ufs.escala.ui;
 
-class PermutaUI {
+public class PermutaUI {
 	
 }

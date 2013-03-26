@@ -1,6 +1,9 @@
 package br.ufs.escala.ui;
 
+import br.ufs.escala.transfer.Usuario;
 
-class DefaultUI {
-	
+public class DefaultUI {
+	public Usuario getUsuario() {
+		return null;
+	}
 }
