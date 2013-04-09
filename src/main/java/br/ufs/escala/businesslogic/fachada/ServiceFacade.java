@@ -1,5 +1,7 @@
 package br.ufs.escala.businesslogic.fachada;
 
+import br.ufs.escala.businesslogic.BusinessLogicFactory;
+import br.ufs.escala.businesslogic.admin.AuthBL;
 import br.ufs.escala.transfer.Usuario;
 
 public class ServiceFacade {
@@ -17,6 +19,10 @@ public class ServiceFacade {
     }
 
     public Usuario authUser(Usuario usuario) {
-        return null;
+        BusinessLogicFactory blFactory = BusinessLogicFactory.getInstance();
+        AuthBL userBL = blFactory.getAuthBL();
+        //TODO validar conforme regra usuario e senha
+        Usuario usuarioRetorno = userBL.verificaUsuario(usuario);
+        return usuarioRetorno;
     }
 }
